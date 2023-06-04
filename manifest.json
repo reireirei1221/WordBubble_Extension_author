@@ -1,8 +1,20 @@
 {
-    "name": "WordBubble_Extension",
+    "name": "WordBubble_Extension_author",
     "version": "1.0.0",
     "manifest_version": 3,
-    "description": "WordBubble_Extension",
+    "description": "WordBubble_Extension_author",
+    "icons": {
+        "48": "star.png"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "star.png"
+    },
+    "host_permissions": [
+        "https://wordbubbles.herokuapp.com/*",
+        "https://dl.acm.org/doi/*",
+        "scripting"
+    ],
     "content_scripts": [
         {
             "matches": [
@@ -14,6 +26,9 @@
         }
     ],
     "permissions": [
-        "activeTab"
+        "activeTab",
+        "scripting",
+        "tabs",
+        "nativeMessaging"
     ]
 }
