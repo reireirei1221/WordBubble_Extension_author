@@ -3,19 +3,44 @@
 
 <head>
     <title>Popup</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css">
+    <!-- Add popup.js -->
     <script src="popup.js"></script>
+    <style>
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 
 <body>
-    <p>How would you rate this website?</p>
-    <div id="rating">
-        <input type="radio" name="rating" value="1"> 1
-        <input type="radio" name="rating" value="2"> 2
-        <input type="radio" name="rating" value="3"> 3
-        <input type="radio" name="rating" value="4"> 4
-        <input type="radio" name="rating" value="5"> 5
+    <div class="container mt-5" style="width:200px; height:200px;">
+        <p id="questionText" class="mb-3">How would you rate this website?</p>
+        <div id="rating" class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-outline-primary">
+                <input type="radio" name="rating" value="1"> 1
+            </label>
+            <label class="btn btn-outline-primary">
+                <input type="radio" name="rating" value="2"> 2
+            </label>
+            <label class="btn btn-outline-primary">
+                <input type="radio" name="rating" value="3"> 3
+            </label>
+            <label class="btn btn-outline-primary">
+                <input type="radio" name="rating" value="4"> 4
+            </label>
+            <label class="btn btn-outline-primary">
+                <input type="radio" name="rating" value="5"> 5
+            </label>
+        </div>
+        <button id="sendButton" class="btn btn-primary mt-3">Send</button>
+        <div id="messageContainer" style="display: none;">
+            <p id="successMessage">Data Sent!</p>
+            <p id="errorMessage" class="error-message">Please rate the website before sending.</p>
+        </div>
     </div>
-    <button id="sendButton">Send</button>
 </body>
 
 </html>
